@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Builder(toBuilder = true)
 @AllArgsConstructor
@@ -12,20 +14,12 @@ import lombok.NoArgsConstructor;
 public class SceneDetailsResponse {
 
     private Long id;
-
     private Long nextSceneId;
-
     private String sceneType;
-
-    private Integer chapterId;
-
+    private String chapterDescription;
     private String sceneText;
-
     private String imagePath;
-
     private String audioPath;
-
     private String musicPath;
-
-    private String sceneLocation;
+    private List<ChoiceDetailsResponse> choices;
 }
