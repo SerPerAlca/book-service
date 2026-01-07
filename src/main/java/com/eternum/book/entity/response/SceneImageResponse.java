@@ -1,15 +1,18 @@
 package com.eternum.book.entity.response;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
+@Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class ScenePreviewResponse {
+public class SceneImageResponse {
 
-    private Long id;
-    private String sceneText;
-    
+    private String path;
+    private Integer sortOrder;
+    private Integer timeOut;
+
 }

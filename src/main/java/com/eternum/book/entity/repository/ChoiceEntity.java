@@ -39,4 +39,7 @@ public class ChoiceEntity {
     @Convert(converter = BooleanNumericConverter.class)
     private Boolean obligatory;
 
+    @Column(name = "HEROE_CODE")
+    private String heroeCode;
+
 }

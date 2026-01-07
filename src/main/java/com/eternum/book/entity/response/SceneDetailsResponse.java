@@ -18,8 +18,9 @@ public class SceneDetailsResponse {
     private String sceneType;
     private String chapterDescription;
     private String sceneText;
-    private String imagePath;
     private String audioPath;
     private String musicPath;
+    private String sceneLocation;
     private List<ChoiceDetailsResponse> choices;
+    private List<SceneImageResponse> images;
 }

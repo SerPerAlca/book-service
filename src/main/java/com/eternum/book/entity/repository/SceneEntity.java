@@ -31,9 +31,6 @@ public class SceneEntity {
     @Column(name = "SCENE_TEXT", nullable = false)
     private String sceneText;
 
-    @Column(name = "IMAGE_PATH")
-    private String imagePath;
-
     @Column(name = "AUDIO_PATH")
     private String audioPath;
 

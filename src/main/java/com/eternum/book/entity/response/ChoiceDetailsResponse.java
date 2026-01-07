@@ -9,10 +9,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ChoiceDetailsResponse {
 
-    private Long id;
+    private Long choiceId;
     private String choiceText;
+    private Long sourceSceneId;
     private Long destinationSceneId;
     private String destinationType;
     private Boolean obligatory;
+    private String heroeCode;
     private ScenePreviewResponse destinationScene;
 }

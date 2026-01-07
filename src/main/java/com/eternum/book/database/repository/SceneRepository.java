@@ -14,7 +14,7 @@ public interface SceneRepository extends JpaRepository<SceneEntity, Long> {
     @Query("""
                 SELECT new com.eternum.book.entity.model.SceneDetailModel(
                     s.id, s.nextSceneId, s.sceneType, chap.description,
-                    s.sceneText, s.imagePath, s.audioPath, s.musicPath
+                    s.sceneText, s.audioPath, s.musicPath, s.sceneLocation
                 )
                 FROM SceneEntity s
                 JOIN ChapterEntity chap ON s.chapterId = chap.id
@@ -25,11 +25,24 @@ public interface SceneRepository extends JpaRepository<SceneEntity, Long> {
     @Query("""
                 SELECT new com.eternum.book.entity.model.SceneDetailModel(
                     s.id, null, null, null,
-                    s.sceneText, s.imagePath, null, null
+                    s.sceneText, null, null, null
                 )
                 FROM SceneEntity s
                 WHERE s.id IN :ids
             """)
     List<SceneDetailModel> findScenePreviewsByIds(@Param("ids") List<Long> ids);
+
+    @Query("""
+                SELECT new com.eternum.book.entity.model.SceneDetailModel(
+                    s.id, s.nextSceneId, s.sceneType, chap.description,
+                    s.sceneText, s.audioPath, s.musicPath, s.sceneLocation
+                )
+                FROM SceneEntity s
+                JOIN ChapterEntity chap ON s.chapterId = chap.id
+                WHERE s.chapterId = :chapterId
+                ORDER BY s.id ASC
+            """)
+    List<SceneDetailModel> findAllScenesByChapterId(@Param("chapterId") Integer chapterId);
+
 
 }

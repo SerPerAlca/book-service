@@ -8,11 +8,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ChoiceDetailModel {
-
     private Long id;
     private String choiceText;
+    private Long sourceSceneId;
     private Long destinationSceneId;
     private String destinationType;
     private Boolean obligatory;
+    private String heroeCode;
     private SceneDetailModel destinationScene;
 }
